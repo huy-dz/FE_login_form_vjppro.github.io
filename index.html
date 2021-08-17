@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pỏn login</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div id="main">
+        <div class="home">
+            <div class="dashboard">
+                <img class="sign-in js-sign-in-btn" src="./assets/img/signin-btn.png" alt="">
+                <img class="sign-up js-sign-up-btn" src="./assets/img/signup-btn.png" alt="">
+            </div>
+        </div>
+
+        <!-- <div class="dashboard">
+            <button class="sign-in js-sign-in-btn">
+                Sign in
+            </button>
+            <button class="sign-up js-sign-up-btn">
+                Sign up
+            </button>
+        </div> -->
+
+        <div class="modal-1 js-modal-1">
+            <div class="login-container js-login-container">
+                <div class="head">
+                    <img src="./assets/img/logo-img.png" alt="" class="logo-img">
+                </div>
+
+                <div class="body">
+                    <ul class="in">
+                        <li>
+                            <i class="ti-user"></i>
+                            <input type="text" name="user" placeholder="Username">
+                        </li>
+                        <li>
+                            <i class="ti-lock"></i>
+                            <input type="password" name="pass word" placeholder="Password">
+                        </li>
+                    </ul>
+                    <div class="signin-btn">
+                        <button >
+                            Sign in
+                        </button>
+                    </div>
+                </div>
+
+                <div class="foot">
+                    <i class="foot-text">
+                        Don't have an account? 
+                    </i>
+                    <a class="sub-signup js-sub-signup" href="#">Sign up</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-2 js-modal-2">
+            <div class="login-container js-login-container">
+                <div class="head-2">
+                    <img src="./assets/img/logo-img.png" alt="" class="logo-img">
+                </div>
+
+                <div class="body body-2">
+                    <ul class="in">
+                        <li>
+                            <i class="ti-user"></i>
+                            <input type="text" name="user" placeholder="Username">
+                        </li>
+                        <li>
+                            <i class="ti-email"></i>
+                            <input type="email" name="email" placeholder="Email">
+                        </li>
+                        <li>
+                            <i class="ti-lock"></i>
+                            <input type="password" name="pass word" placeholder="Password">
+                        </li>
+                        <li>
+                            <i class="ti-lock"></i>
+                            <input type="password" name="" placeholder="Ponfirm Password">
+                            <!-- <input type="text" name="pass word" placeholder="Confirm Password"> -->
+                        </li>
+                    </ul>
+                    <div class="signin-btn">
+                        <button >
+                            Sign up
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const inBtn = document.querySelector('.js-sign-in-btn')
+        const upBtn = document.querySelector('.js-sign-up-btn')
+        const modal_1 = document.querySelector('.js-modal-1')
+        const modal_2 = document.querySelector('.js-modal-2')
+        const Containers = document.querySelectorAll('.js-login-container')
+        const subSignup = document.querySelector('.js-sub-signup')
+
+        function showModal_1() {
+            modal_1.classList.add('open-modal')
+        }
+
+        function showModal_2() {
+            modal_2.classList.add('open-modal')
+        }
+
+        function hideModal_1() {
+            modal_1.classList.remove('open-modal')
+        }
+
+        function hideModal_2() {
+            modal_2.classList.remove('open-modal')
+        }
+
+        function stop(event) {
+            event.stopPropagation()
+        }
+
+        inBtn.addEventListener('click', showModal_1)
+
+        upBtn.addEventListener('click', showModal_2)
+
+        subSignup.addEventListener('click', function() {
+            modal_1.classList.remove('open-modal')
+            modal_2.classList.add('open-modal')
+        })
+        
+        modal_1.addEventListener('click', hideModal_1)
+        modal_2.addEventListener('click', hideModal_2)
+
+        for (const container of Containers) {
+            container.addEventListener('click', stop)
+        }
+    </script>
+</body>
+</html>

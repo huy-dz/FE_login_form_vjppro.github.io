@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.open-modal {
+    display: flex !important;
+}
+
+html {
+    font-family:'Courier New', Courier, monospace;
+}
+
+#main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(/assets/img/background-main.jpg);
+    background-color: #333;
+    background-size: 100%;
+    background-position: center;
+    /* transition: background-color 2s ease; */
+}
+
+
+/* dashboard */
+
+.dashboard {
+    text-align: right;
+    padding: 16px 32px;
+    font-size: 32px;
+    display: flex;
+    align-items: flex-end;
+    justify-content:flex-end;
+}
+
+.dashboard img[class*="sign"]:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.dashboard img[class*="sign"] {
+    width: 10%;
+    padding: 8px;
+}
+
+.dashboard .sign-in {
+    animation: moveInBtn cubic-bezier(0, 0.01, 1, 1.01) 0.5s;
+}
+
+.dashboard .sign-up {
+    animation: moveUpBtn cubic-bezier(0, 0.01, 1, 1.01) 0.5s;
+}
+
+/* modal - 1 */
+
+.modal-1 {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    max-width: 500px;
+    min-height: 800px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 100;
+    animation: moveModal ease 0.5s;
+}
+
+.login-container .close-btn {
+    position: absolute;
+    top: 0; right: 0;
+}
+
+.login-container .head .logo-img {
+    width: 100%;
+    padding: 64px 0;
+}
+
+.login-container .body {
+    padding: 50px 16px;
+}
+
+.login-container .body li i {
+    font-size: 24px;
+    color: #fff;
+    opacity: 0.6;
+    margin-right: 16px;
+}
+
+.login-container .body li {
+    padding: 16px 0;
+    margin: 0 16px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 28px;
+}
+
+.login-container .body li input {
+    border: none;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.login-container .body .signin-btn button:hover {
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container .body .signin-btn {
+    width: 100%;
+    padding: 16px;
+}
+
+.login-container .body .signin-btn button{
+    width: 100%;
+    padding: 16px 0;
+    background-color: rgb(177, 27, 72);
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    opacity: 0.8;
+    border-radius: 55px 55px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.login-container .foot {
+    padding: 16px;
+    text-align: center;
+}
+
+.login-container .foot .foot-text {
+    opacity: 0.6;
+}
+
+.login-container .foot a {
+    color: #fff;
+    text-decoration: none;
+    font-style: italic;
+}
+
+/* modal-2 */
+
+.modal-2 {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-2 .head-2 .logo-img {
+    width: 100%;
+    text-align: center;
+}
+
+.modal-2 .body-2 {
+    padding: 16px;
+}
+
+/* animation */
+@keyframes moveModal {
+    from {
+        opacity: 0.3;
+        transform: translateY(-200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveInBtn {
+    from {
+        transform: translateX(-20%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveUpBtn {
+    from {
+        transform: translateX(10%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
